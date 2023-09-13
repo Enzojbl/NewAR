@@ -10,15 +10,15 @@
             window.onload = function() {
             AFRAME.registerComponent('videohandler', {
                 init: function () {
-                    var marker = this.el;
+                    var my-marker = this.el;
                     this.vid = document.querySelector("#vid");
 
-                    marker.addEventListener('markerFound', function () {
+                    my-marker.addEventListener('markerFound', function () {
                         this.toggle = true;
                         this.vid.play();
                     }.bind(this));
 
-                    marker.addEventListener('markerLost', function () {
+                    my-marker.addEventListener('markerLost', function () {
                         this.toggle = false;
                         this.vid.pause();
                     }.bind(this));
@@ -55,7 +55,7 @@
             <a-marker
                 type="pattern"
                 preset="custom"
-                url="assets/marker.patt"
+                url="assets/my-marker.patt"
                 videohandler
                 smooth="true"
                 smoothCount="10"
